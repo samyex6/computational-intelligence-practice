@@ -1,0 +1,40 @@
+<!DOCTYPE>
+<html>
+<head>
+<style>
+    * { font-size: 12px; }
+    table { border-collapse: collapse; }
+    td { vertical-align: top; padding: 10px; border: 1px solid #e3e3ef; }
+</style>
+
+</head>
+<body>
+<main>
+    <table width="100%">
+        <tr>
+            <td width="33%">Population count: <input type="number" id="popsize" value="233"></td>
+            <td width="33%">Mutation rate: <input type="number" id="mutation_rate" value="0.05"></td>
+            <td width="33%">Target: <textarea cols="50" row="5" id="target">To be or not to be</textarea></td>
+        </tr>
+        <tr><td colspan="3">
+            <button onclick="instance.initialize()">Start</button>
+            <button onclick="instance.stop()">Stop</button>
+        </td></tr>
+        <tr>
+            <td>Generation: <span id="generation"></span></td>
+            <td>Average fitness: <span id="average_fitness"></span></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Populations</td>
+            <td colspan="2">Best result: <span id="best_result"></span></td>
+        </tr>
+        <tr><td colspan="3"><pre id="populations"></pre></td></tr>
+    </table>
+    <script src="genetic-algorithm.js"></script>
+    <script>
+        var instance = new GA();
+    </script>
+</main>
+</body>
+</html>
